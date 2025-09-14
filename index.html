@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es" class="no-js">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Eduar Montoya — Portafolio</title>
+  <meta name="description"
+    content="Portafolio de Eduar Montoya Castillo: proyectos de desarrollo web, sistemas de inventario y páginas interactivas educativas." />
+  <meta property="og:title" content="Portafolio — Eduar Montoya" />
+  <meta property="og:description"
+    content="Técnico en Análisis y Programación en formación. Proyectos reales y enfoque práctico." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/logo.svg" />
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <script>
+    // 🚀 Modo oscuro por defecto
+    (function () {
+      let theme = localStorage.getItem('theme');
+      if (!theme) {
+        theme = 'dark'; // SIEMPRE arranca en dark
+        localStorage.setItem('theme', theme);
+      }
+      document.documentElement.classList.remove('dark', 'light');
+      document.documentElement.classList.add(theme);
+      document.documentElement.classList.remove('no-js');
+    })();
+  </script>
+</head>
+
+<body>
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="Volver al inicio">
+      <img src="assets/logo.svg" alt="Logo Eduar.dev" width="128" height="32" />
+    </a>
+    <nav class="main-nav">
+      <a href="#proyectos">Proyectos</a>
+      <a href="#habilidades">Habilidades</a>
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#contacto" class="btn btn-primary">Contacto</a>
+      <button id="themeToggle" class="icon-btn" aria-label="Cambiar tema">🌙</button>
+    </nav>
+  </header>
+
+  <main id="inicio">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Desarrollador en formación, <span class="accent">eficiente</span> y orientado a resultados</h1>
+        <p>Creo soluciones claras y funcionales: desde sistemas de inventario multinegocio hasta páginas educativas
+          interactivas y dashboards. Estoy iniciando mi ruta profesional, pero ya construyo productos que resuelven
+          problemas reales.</p>
+        <div class="hero-cta">
+          <a href="#proyectos" class="btn btn-primary">Ver proyectos</a>
+          <a href="#contacto" class="btn btn-outline">Hablemos</a>
+        </div>
+        <ul class="hero-badges" aria-label="Tecnologías principales">
+          <li>PHP</li>
+          <li>MySQL</li>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+        </ul>
+      </div>
+      <div class="hero-art">
+        <img src="assets/gear.svg" alt="Ilustración de engranajes" width="160" height="160">
+      </div>
+    </section>
+
+    <!-- PROYECTOS -->
+    <section id="proyectos" class="section">
+      <div class="section-head">
+        <h2>Proyectos destacados</h2>
+        <p class="section-sub">Selección de trabajos que demuestran enfoque práctico, claridad de código y progreso
+          constante.</p>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Proyecto 1 -->
+        <article class="card">
+          <header class="card-head">
+            <h3>Inventario & Logística Multinegocio</h3>
+            <span class="pill">PHP • MySQL • JS</span>
+          </header>
+          <p>Sistema para restaurantes, licorerías y minimercados: módulos de autenticación con control de sesiones,
+            gestión de usuarios/roles, y base de datos relacional.</p>
+          <ul class="tags">
+            <li>Auth</li>
+            <li>Roles</li>
+            <li>Escalable</li>
+          </ul>
+          <div class="card-cta">
+            <a href=  https://eduar2078.github.io/Gestor-De-Negocio-Demo/ aria-label="Abrir demo">Demo</a>
+          </div>
+        </article>
+
+        <!-- Proyecto 2 -->
+        <article class="card">
+          <header class="card-head">
+            <h3>Página Educativa Interactiva</h3>
+            <span class="pill">HTML • CSS • JS</span>
+          </header>
+          <p>Aprendizaje de números y animales en inglés. Interacciones por botón que reproducen audio; accesible y
+            amigable para primera infancia.</p>
+          <ul class="tags">
+            <li>Audio</li>
+            <li>UI limpia</li>
+            <li>Accesible</li>
+          </ul>
+          <div class="card-cta">
+            <a href="#" aria-label="Abrir demo">Demo</a>
+          </div>
+        </article>
+
+        <!-- Proyecto 3 -->
+        <article class="card">
+          <header class="card-head">
+            <h3>Dashboard de Aviación</h3>
+            <span class="pill">Datos • Visualización</span>
+          </header>
+          <p>Gráficos de incidentes por año y tipos de incidentes más comunes. Diseño responsive y foco en claridad.</p>
+          <ul class="tags">
+            <li>Chart</li>
+            <li>Responsive</li>
+            <li>UX</li>
+          </ul>
+          <div class="card-cta">
+            <a href="#" aria-label="Abrir demo">Demo</a>
+          </div>
+        </article>
+
+        <!-- Proyecto 4 -->
+        <article class="card">
+          <header class="card-head">
+            <h3>FPS en Desarrollo</h3>
+            <span class="pill">VS Code • 3D</span>
+          </header>
+          <p>Prototipo de shooter en primera persona: enemigos, detección de impactos, recarga y escenario 3D en
+            progreso.</p>
+          <ul class="tags">
+            <li>Gameplay</li>
+            <li>3D</li>
+            <li>Iteración</li>
+          </ul>
+          <div class="card-cta">
+            <a href="#" aria-label="Abrir devlog">Devlog</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    
+
+    <!-- HABILIDADES -->
+    <section id="habilidades" class="section">
+      <div class="section-head">
+        <h2>Habilidades</h2>
+        <p class="section-sub">Bases sólidas, mentalidad de mejora continua y enfoque en buenas prácticas.</p>
+      </div>
+      <ul class="skills-list">
+        <li><strong>Backend:</strong> PHP (estructurado), MySQL (modelado relacional, consultas CRUD).</li>
+        <li><strong>Frontend:</strong> HTML semántico, CSS moderno (Flex/Grid), JS básico.</li>
+        <li><strong>Buenas prácticas:</strong> control de versiones, organización de archivos, responsive design.</li>
+        <li><strong>En progreso:</strong> autenticación robusta, recuperación de contraseña, gráficos, accesibilidad.
+        </li>
+      </ul>
+    </section>
+
+    <!-- SOBRE MI -->
+    <section id="sobre-mi" class="section">
+      <div class="section-head">
+        <h2>Sobre mí</h2>
+      </div>
+      <div class="about">
+        <p>Soy técnico en análisis y programación de computadores en formación. Me gustan los retos prácticos y
+          construir productos reales. Mi estilo es sencillo y profesional, con un toque cercano: me enfoco en entregar
+          valor rápido y mejorar con cada iteración.</p>
+        <ul class="highlights">
+          <li>Comunicación clara y trabajo en equipo.</li>
+          <li>Aprendizaje rápido y documentación.</li>
+          <li>Orientación a la calidad y a la entrega.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="section">
+      <div class="section-head">
+        <h2>Contacto</h2>
+        <p class="section-sub">¿Tienes una idea o un proyecto? Escríbeme.</p>
+      </div>
+      <div class="contact">
+        <a class="btn btn-primary" href="mailto:eduar@example.com">Correo</a>
+        <a class="btn btn-outline" href="https://wa.me/573000000000" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="link" href="cv/currículum profesional  monocromático verde .pdf" target="_blank" rel="noopener">CV (PDF)</a>
+        <!-- <a class="link" href="#" target="_blank" rel="noopener">GitHub</a> -->
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Eduar Montoya • Hecho con HTML, CSS y un poco de JS.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
