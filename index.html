@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" class="no-js">
+<html lang="es" data-bs-theme="dark">
 
 <head>
   <meta charset="utf-8" />
@@ -11,202 +11,427 @@
   <meta property="og:description"
     content="Técnico en Análisis y Programación en formación. Proyectos reales y enfoque práctico." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/logo.svg" />
-  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+
+  <!-- Google Fonts: Syne (display) + DM Sans (body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap"
+    rel="stylesheet">
 
-  <script>
-    // 🚀 Modo oscuro por defecto
-    (function () {
-      let theme = localStorage.getItem('theme');
-      if (!theme) {
-        theme = 'dark'; // SIEMPRE arranca en dark
-        localStorage.setItem('theme', theme);
-      }
-      document.documentElement.classList.remove('dark', 'light');
-      document.documentElement.classList.add(theme);
-      document.documentElement.classList.remove('no-js');
-    })();
-  </script>
+  <!-- Bootstrap 5 -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
+
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 
 <body>
-  <header class="site-header">
-    <a class="brand" href="#inicio" aria-label="Volver al inicio">
-      <img src="assets/logo.svg" alt="Logo Eduar.dev" width="128" height="32" />
-    </a>
-    <nav class="main-nav">
-      <a href="#proyectos">Proyectos</a>
-      <a href="#habilidades">Habilidades</a>
-      <a href="#sobre-mi">Sobre mí</a>
-      <a href="#contacto" class="btn btn-primary">Contacto</a>
-      <button id="themeToggle" class="icon-btn" aria-label="Cambiar tema">🌙</button>
-    </nav>
-  </header>
 
-  <main id="inicio">
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-text">
-        <h1>Desarrollador en formación, <span class="accent">eficiente</span> y orientado a resultados</h1>
-        <p>Creo soluciones claras y funcionales: desde sistemas de inventario multinegocio hasta páginas educativas
-          interactivas y dashboards. Estoy iniciando mi ruta profesional, pero ya construyo productos que resuelven
-          problemas reales.</p>
-        <div class="hero-cta">
-          <a href="#proyectos" class="btn btn-primary">Ver proyectos</a>
-          <a href="#contacto" class="btn btn-outline">Hablemos</a>
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar navbar-expand-lg sticky-top em-navbar">
+    <div class="container">
+      <a class="navbar-brand em-brand" href="#inicio">
+        <span class="em-logo-text">Eduar<span class="em-accent">.dev</span></span>
+      </a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+        aria-controls="mainNav" aria-expanded="false" aria-label="Menú">
+        <i class="bi bi-list fs-4"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+          <li class="nav-item"><a class="nav-link" href="#proyectos">Proyectos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#habilidades">Habilidades</a></li>
+          <li class="nav-item"><a class="nav-link" href="#sobre-mi">Sobre mí</a></li>
+          <li class="nav-item ms-lg-2">
+            <a class="btn em-btn-primary btn-sm px-3" href="#contacto">Contacto</a>
+          </li>
+          <li class="nav-item ms-lg-1">
+            <button id="themeToggle" class="btn em-icon-btn" aria-label="Cambiar tema">
+              <i class="bi bi-moon-stars-fill" id="iconMoon"></i>
+              <i class="bi bi-sun-fill d-none" id="iconSun"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section id="inicio" class="em-hero">
+    <div class="em-hero-grid-bg" aria-hidden="true"></div>
+    <div class="container">
+      <div class="row align-items-center gy-5">
+        <div class="col-lg-7 em-hero-content">
+          <span class="em-eyebrow">Disponible para proyectos</span>
+          <h1 class="em-hero-title">
+            Desarrollador en formación,
+            <span class="em-accent-text">eficiente</span>
+            y orientado a resultados
+          </h1>
+          <p class="em-hero-sub">
+            Creo soluciones claras y funcionales: desde sistemas de inventario multinegocio
+            hasta páginas educativas interactivas y dashboards. Ya construyo productos que resuelven problemas reales.
+          </p>
+          <div class="d-flex flex-wrap gap-3 mt-4">
+            <a href="#proyectos" class="btn em-btn-primary">
+              <i class="bi bi-grid-3x3-gap me-2"></i>Ver proyectos
+            </a>
+            <a href="#contacto" class="btn em-btn-outline">
+              <i class="bi bi-chat-dots me-2"></i>Hablemos
+            </a>
+          </div>
+          <div class="em-tech-stack mt-4">
+            <span class="em-badge">PHP</span>
+            <span class="em-badge">MySQL</span>
+            <span class="em-badge">HTML</span>
+            <span class="em-badge">CSS</span>
+            <span class="em-badge">JavaScript</span>
+          </div>
         </div>
-        <ul class="hero-badges" aria-label="Tecnologías principales">
-          <li>PHP</li>
-          <li>MySQL</li>
-          <li>HTML</li>
-          <li>CSS</li>
-          <li>JavaScript</li>
-        </ul>
-      </div>
-      <div class="hero-art">
-        <img src="assets/gear.svg" alt="Ilustración de engranajes" width="160" height="160">
-      </div>
-    </section>
-
-    <!-- PROYECTOS -->
-    <section id="proyectos" class="section">
-      <div class="section-head">
-        <h2>Proyectos destacados</h2>
-        <p class="section-sub">Selección de trabajos que demuestran enfoque práctico, claridad de código y progreso
-          constante.</p>
-      </div>
-
-      <div class="projects-grid">
-        <!-- Proyecto 1 -->
-        <article class="card">
-          <header class="card-head">
-            <h3>Inventario & Logística Multinegocio</h3>
-            <span class="pill">PHP • MySQL • JS</span>
-          </header>
-          <p>Sistema para restaurantes, licorerías y minimercados: módulos de autenticación con control de sesiones,
-            gestión de usuarios/roles, y base de datos relacional.</p>
-          <ul class="tags">
-            <li>Auth</li>
-            <li>Roles</li>
-            <li>Escalable</li>
-          </ul>
-          <div class="card-cta">
-            <a href=  https://eduar2078.github.io/Gestor-De-Negocio-Demo/ aria-label="Abrir demo">Demo</a>
+        <div class="col-lg-5 text-center">
+          <div class="em-hero-art">
+            <div class="em-art-ring"></div>
+            <div class="em-art-ring em-art-ring--2"></div>
+            <div class="em-art-core">
+              <i class="bi bi-code-slash em-art-icon"></i>
+            </div>
           </div>
-        </article>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- Proyecto 2 -->
-        <article class="card">
-          <header class="card-head">
-            <h3>Página Educativa Interactiva</h3>
-            <span class="pill">HTML • CSS • JS</span>
-          </header>
-          <p>Aprendizaje de números y animales en inglés. Interacciones por botón que reproducen audio; accesible y
-            amigable para primera infancia.</p>
-          <ul class="tags">
-            <li>Audio</li>
-            <li>UI limpia</li>
-            <li>Accesible</li>
-          </ul>
-          <div class="card-cta">
-            <a href="#" aria-label="Abrir demo">Demo</a>
+  <main>
+    <!-- ========== PROYECTOS ========== -->
+    <section id="proyectos" class="em-section">
+      <div class="container">
+        <div class="em-section-head mb-5">
+          <span class="em-section-label">Trabajo</span>
+          <h2 class="em-section-title">Proyectos destacados</h2>
+          <p class="em-section-sub">Selección de trabajos que demuestran enfoque práctico, claridad de código y progreso
+            constante.</p>
+        </div>
+        <div class="row g-4">
+
+          <!-- Proyecto 1 -->
+          <div class="col-md-6 col-xl-3">
+            <article class="em-card h-100">
+              <div class="em-card-icon">
+                <i class="bi bi-box-seam"></i>
+              </div>
+              <div class="em-card-body">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                  <h3 class="em-card-title">Inventario & Logística Multinegocio</h3>
+                  <span class="em-pill">PHP · MySQL · JS</span>
+                </div>
+                <p class="em-card-text">
+                  Plataforma ERP diseñada para la administración centralizada de inventarios.
+                  Optimiza el control de stock y flujos de caja mediante una base de datos
+                  relacional sólida y un sistema de permisos por jerarquía de usuarios.
+                </p>
+                <div class="d-flex flex-wrap gap-2 mt-3">
+                  <span class="em-tag">Auth</span>
+                  <span class="em-tag">Roles</span>
+                  <span class="em-tag">Escalable</span>
+                </div>
+              </div>
+              <div class="em-card-footer">
+                <a href="https://eduar2078.github.io/Gestor-De-Negocio-Demo/" target="_blank" rel="noopener"
+                  class="em-card-link">
+                  Ver demo <i class="bi bi-arrow-up-right ms-1"></i>
+                </a>
+              </div>
+            </article>
           </div>
-        </article>
 
-        <!-- Proyecto 3 -->
-        <article class="card">
-          <header class="card-head">
-            <h3>Dashboard de Aviación</h3>
-            <span class="pill">Datos • Visualización</span>
-          </header>
-          <p>Gráficos de incidentes por año y tipos de incidentes más comunes. Diseño responsive y foco en claridad.</p>
-          <ul class="tags">
-            <li>Chart</li>
-            <li>Responsive</li>
-            <li>UX</li>
-          </ul>
-          <div class="card-cta">
-            <a href="#" aria-label="Abrir demo">Demo</a>
+          <!-- Proyecto 2 -->
+          <div class="col-md-6 col-xl-3">
+            <article class="em-card h-100">
+              <div class="em-card-icon">
+                <i class="bi bi-book"></i>
+              </div>
+              <div class="em-card-body">
+                <!-- Eliminamos justify-content-between y usamos flex-column -->
+                <div class="d-flex flex-column align-items-start mb-2">
+                  <h3 class="em-card-title mb-1">Página mvc de contabilidad</h3>
+                  <span class="em-pill">HTML · CSS · JS · PHP · MYSQL/SQL</span>
+                </div>
+                <p class="em-card-text">
+                  Desarrollo de una solución integral para el procesamiento de transacciones financieras.
+                  El sistema destaca por una <strong>arquitectura desacoplada (MVC)</strong> que separa
+                  estrictamente la lógica de negocio de la interfaz, garantizando integridad de datos
+                  y una experiencia de usuario fluida mediante peticiones asíncronas.
+                </p>
+                <div class="d-flex flex-wrap gap-2 mt-3">
+                  <span class="em-tag">MVC</span>
+                  <span class="em-tag">Responsive</span>
+                  <span class="em-tag">Auth</span>
+                </div>
+              </div>
+              <div class="em-card-footer">
+                <a href="https://contabilitydemo.duckdns.org/" target="_blank" rel="noopener" class="em-card-link">
+                  Ver demo <i class="bi bi-arrow-up-right ms-1"></i>
+                </a>
+              </div>
+              <div class="em-card-footer">
+                <!-- Cambiado href por un onclick para abrir el modal -->
+                <a href="javascript:void(0)" onclick="openModal('modalInfoProyecto')" class="em-card-link">
+                  Ver información <i class="bi bi-info-circle ms-1"></i>
+                </a>
+              </div>
+            </article>
           </div>
-        </article>
 
-        <!-- Proyecto 4 -->
-        <article class="card">
-          <header class="card-head">
-            <h3>FPS en Desarrollo</h3>
-            <span class="pill">VS Code • 3D</span>
-          </header>
-          <p>Prototipo de shooter en primera persona: enemigos, detección de impactos, recarga y escenario 3D en
-            progreso.</p>
-          <ul class="tags">
-            <li>Gameplay</li>
-            <li>3D</li>
-            <li>Iteración</li>
-          </ul>
-          <div class="card-cta">
-            <a href="#" aria-label="Abrir devlog">Devlog</a>
+          <!-- Proyecto 3 -->
+          <div class="col-md-6 col-xl-3">
+            <article class="em-card h-100">
+              <div class="em-card-icon">
+                <i class="bi bi-headset"></i>
+              </div>
+
+              <div class="em-card-body">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                  <h3 class="em-card-title">Sistema de Tickets IT</h3>
+                  <span class="em-pill">Enterprise · Soporte</span>
+                </div>
+
+                <p class="em-card-text">
+                  Plataforma de gestión de incidencias y soporte técnico con roles,
+                  dashboard analítico, control de estados, prioridades y seguimiento
+                  de tickets en tiempo real.
+                </p>
+
+                <div class="d-flex flex-wrap gap-2 mt-3">
+                  <span class="em-tag">PHP MVC</span>
+                  <span class="em-tag">SQL Server</span>
+                  <span class="em-tag">Dashboard</span>
+                </div>
+              </div>
+
+              <div class="em-card-footer">
+                <a href="#" class="em-card-link em-card-link--muted">
+                  En desarrollo <i class="bi bi-tools ms-1"></i>
+                </a>
+              </div>
+            </article>
           </div>
-        </article>
-      </div>
-    </section>
 
-    
+          <div class="col-md-6 col-xl-3">
+            <article class="em-card h-100">
+              <div class="em-card-icon">
+                <i class="bi bi-box-seam"></i>
+              </div>
 
-    <!-- HABILIDADES -->
-    <section id="habilidades" class="section">
-      <div class="section-head">
-        <h2>Habilidades</h2>
-        <p class="section-sub">Bases sólidas, mentalidad de mejora continua y enfoque en buenas prácticas.</p>
-      </div>
-      <ul class="skills-list">
-        <li><strong>Backend:</strong> PHP (estructurado), MySQL (modelado relacional, consultas CRUD).</li>
-        <li><strong>Frontend:</strong> HTML semántico, CSS moderno (Flex/Grid), JS básico.</li>
-        <li><strong>Buenas prácticas:</strong> control de versiones, organización de archivos, responsive design.</li>
-        <li><strong>En progreso:</strong> autenticación robusta, recuperación de contraseña, gráficos, accesibilidad.
-        </li>
-      </ul>
-    </section>
+              <div class="em-card-body">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                  <h3 class="em-card-title">Gestor de Inventario</h3>
+                  <span class="em-pill">Enterprise · Stock</span>
+                </div>
 
-    <!-- SOBRE MI -->
-    <section id="sobre-mi" class="section">
-      <div class="section-head">
-        <h2>Sobre mí</h2>
-      </div>
-      <div class="about">
-        <p>Soy técnico en análisis y programación de computadores en formación. Me gustan los retos prácticos y
-          construir productos reales. Mi estilo es sencillo y profesional, con un toque cercano: me enfoco en entregar
-          valor rápido y mejorar con cada iteración.</p>
-        <ul class="highlights">
-          <li>Comunicación clara y trabajo en equipo.</li>
-          <li>Aprendizaje rápido y documentación.</li>
-          <li>Orientación a la calidad y a la entrega.</li>
-        </ul>
-      </div>
-    </section>
+                <p class="em-card-text">
+                  Sistema de gestión de inventario orientado al control de repuestos
+                  y materiales empresariales, con trazabilidad de movimientos,
+                  dashboard analítico y generación de etiquetas QR.
+                </p>
 
-    <!-- CONTACTO -->
-    <section id="contacto" class="section">
-      <div class="section-head">
-        <h2>Contacto</h2>
-        <p class="section-sub">¿Tienes una idea o un proyecto? Escríbeme.</p>
-      </div>
-      <div class="contact">
-        <a class="btn btn-primary" href="mailto:eduar@example.com">Correo</a>
-        <a class="btn btn-outline" href="https://wa.me/573000000000" target="_blank" rel="noopener">WhatsApp</a>
-        <a class="link" href="cv/currículum profesional  monocromático verde .pdf" target="_blank" rel="noopener">CV (PDF)</a>
-        <!-- <a class="link" href="#" target="_blank" rel="noopener">GitHub</a> -->
-      </div>
-    </section>
+                <div class="d-flex flex-wrap gap-2 mt-3">
+                  <span class="em-tag">PHP MVC</span>
+                  <span class="em-tag">SQL Server</span>
+                  <span class="em-tag">Inventario</span>
+                </div>
+              </div>
+
+              <div class="em-card-footer">
+                <a href="#" class="em-card-link em-card-link--muted">
+                  En desarrollo <i class="bi bi-tools ms-1"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+          <!-- ========== HABILIDADES ========== -->
+          <section id="habilidades" class="em-section em-section--alt">
+            <div class="container">
+              <div class="em-section-head mb-5">
+                <span class="em-section-label">Stack</span>
+                <h2 class="em-section-title">Habilidades</h2>
+                <p class="em-section-sub">Bases sólidas, mentalidad de mejora continua y enfoque en buenas prácticas.
+                </p>
+              </div>
+              <div class="row g-4">
+                <div class="col-sm-6 col-lg-3">
+                  <div class="em-skill-card">
+                    <div class="em-skill-icon"><i class="bi bi-server"></i></div>
+                    <h4 class="em-skill-title">Backend</h4>
+                    <p class="em-skill-desc">PHP estructurado, MySQL — modelado relacional y consultas CRUD.</p>
+                  </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                  <div class="em-skill-card">
+                    <div class="em-skill-icon"><i class="bi bi-layout-text-window"></i></div>
+                    <h4 class="em-skill-title">Frontend</h4>
+                    <p class="em-skill-desc">HTML semántico, CSS moderno (Flex/Grid), JavaScript básico.</p>
+                  </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                  <div class="em-skill-card">
+                    <div class="em-skill-icon"><i class="bi bi-git"></i></div>
+                    <h4 class="em-skill-title">Buenas prácticas</h4>
+                    <p class="em-skill-desc">Control de versiones, organización de archivos y responsive design.</p>
+                  </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                  <div class="em-skill-card em-skill-card--progress">
+                    <div class="em-skill-icon"><i class="bi bi-rocket-takeoff"></i></div>
+                    <h4 class="em-skill-title">En progreso</h4>
+                    <p class="em-skill-desc">Auth robusta, recuperación de contraseña, gráficos, accesibilidad.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- ========== SOBRE MÍ ========== -->
+          <section id="sobre-mi" class="em-section">
+            <div class="container">
+              <div class="row align-items-center g-5">
+                <div class="col-lg-5">
+                  <div class="em-about-graphic">
+                    <div class="em-about-block em-about-block--1">
+                      <i class="bi bi-person-workspace fs-2"></i>
+                    </div>
+                    <div class="em-about-block em-about-block--2">
+                      <span class="em-counter">4</span>
+                      <span class="em-counter-label">Proyectos</span>
+                    </div>
+                    <div class="em-about-block em-about-block--3">
+                      <i class="bi bi-lightning-charge-fill"></i>
+                      <span>Full-stack</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-7">
+                  <span class="em-section-label">Quién soy</span>
+                  <h2 class="em-section-title">Sobre mí</h2>
+                  <p class="em-about-text">
+                    Soy técnico en análisis y programación de computadores en formación. Me gustan los retos prácticos y
+                    construir productos reales. Mi estilo es sencillo y profesional, con un toque cercano: me enfoco en
+                    entregar valor rápido y mejorar con cada iteración.
+                  </p>
+                  <ul class="em-highlights">
+                    <li><i class="bi bi-check2-circle me-2 em-accent-text"></i>Comunicación clara y trabajo en equipo.
+                    </li>
+                    <li><i class="bi bi-check2-circle me-2 em-accent-text"></i>Aprendizaje rápido y documentación.</li>
+                    <li><i class="bi bi-check2-circle me-2 em-accent-text"></i>Orientación a la calidad y a la entrega.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- ========== CONTACTO ========== -->
+          <section id="contacto" class="em-section em-section--contact">
+            <div class="container text-center">
+              <span class="em-section-label">¿Trabajamos juntos?</span>
+              <h2 class="em-section-title">Contacto</h2>
+              <p class="em-section-sub mb-5">¿Tienes una idea o un proyecto? Escríbeme y lo construimos.</p>
+              <div class="d-flex flex-wrap justify-content-center gap-3">
+                <a class="btn em-btn-primary btn-lg" href="mailto:eduarmontoyacatillo@gmail.com">
+                  <i class="bi bi-envelope me-2"></i>Correo electrónico
+                </a>
+                <a class="btn em-btn-outline btn-lg" href="https://wa.me/573115602047" target="_blank" rel="noopener">
+                  <i class="bi bi-whatsapp me-2"></i>WhatsApp
+                </a>
+                <a class="btn em-btn-ghost btn-lg" href="cv/cv_EduarMontoyaCatillo.pdf"
+                  target="_blank" rel="noopener">
+                  <i class="bi bi-file-earmark-person me-2"></i>Descargar CV
+                </a>
+              </div>
+            </div>
+          </section>
+          <!-- ── MODAL: Información del Proyecto ── -->
+          <div class="dw-overlay-2" id="modalInfoProyecto" onclick="overlayClick2(event,'modalInfoProyecto')">
+            <div class="dw-modal-2">
+
+              <!-- Cabecera -->
+              <div class="m2-head">
+                <div class="d-flex align-items-center gap-2">
+                  <div class="icon-box"
+                    style="background: rgba(0, 242, 255, 0.1); color: #00f2ff; padding: 8px; border-radius: 8px; display: flex;">
+                    <i class="bi bi-file-earmark-text"></i>
+                  </div>
+                  <div class="m2-title">Detalles del Proyecto</div>
+                </div>
+                <button class="m2-back" onclick="closeModal('modalInfoProyecto')">
+                  <i class="bi bi-x"></i> Cerrar
+                </button>
+              </div>
+
+              <!-- Cuerpo: Aquí están las opciones que faltaban -->
+              <div class="m2-body">
+                <div
+                  style="color: #00f2ff; font-size: 0.75rem; font-weight: bold; margin-bottom: 1rem; letter-spacing: 1px;">
+                  DOCUMENTACIÓN</div>
+
+                <div class="d-flex flex-column gap-3">
+
+                  <!-- Opción 1: PDF -->
+                  <a href="Documentation/DOCUMENTACION.pdf" target="_blank" class="btn-opcion-dark">
+                    <div class="d-flex align-items-center gap-3">
+                      <div class="icon-box">
+                        <i class="bi bi-file-pdf-fill"></i>
+                      </div>
+                      <div class="text-start">
+                        <span class="title">Especificaciones Técnicas</span>
+                        <span class="subtitle">Documento detallado en PDF</span>
+                      </div>
+                    </div>
+                    <i class="bi bi-chevron-right arrow"></i>
+                  </a>
+
+                  <!-- Opción 2: Enlace -->
+                  <a href="https://github.com/eduar2078/Contability_Mvc.git" target="_blank" class="btn-opcion-dark">
+                    <div class="d-flex align-items-center gap-3">
+                      <div class="icon-box">
+                        <i class="bi bi-github"></i>
+                      </div>
+                      <div class="text-start">
+                        <span class="title">Repositorio del Proyecto</span>
+                        <span class="subtitle">Ver código fuente y guía</span>
+                      </div>
+                    </div>
+                    <i class="bi bi-chevron-right arrow"></i>
+                  </a>
+
+                </div>
+              </div>
+
+              <!-- Pie del Modal -->
+              <div class="m2-foot">
+                <button class="dw-btn btn-ghost"
+                  style="color: #8b949e; border: none; background: transparent; cursor: pointer;"
+                  onclick="closeModal('modalInfoProyecto')">
+                  Regresar
+                </button>
+              </div>
+
+            </div>
+          </div>
   </main>
 
-  <footer class="site-footer">
-    <p>© <span id="year"></span> Eduar Montoya • Hecho con HTML, CSS y un poco de JS.</p>
+  <!-- ========== FOOTER ========== -->
+  <footer class="em-footer">
+    <div class="container d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2">
+      <span class="em-logo-text small">Eduar<span class="em-accent">.dev</span></span>
+      <p class="mb-0 em-footer-text">© <span id="year"></span> Eduar Montoya Castillo</p>
+      <p class="mb-0 em-footer-text">Hecho con Bootstrap 5 & ❤️</p>
+    </div>
   </footer>
 
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
   <script src="js/main.js"></script>
 </body>
 

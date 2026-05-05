@@ -1,27 +1,72 @@
-const themeBtn = document.getElementById('themeToggle');
-const root = document.documentElement;
+// Año en footer
 const year = document.getElementById('year');
-
-// Año actual en footer
 if (year) year.textContent = new Date().getFullYear();
 
-// Obtener tema actual
-function getTheme() {
-  return localStorage.getItem('theme') || 'dark'; // 🚀 siempre dark por defecto
+// Tema dark/light con Bootstrap 5 data-bs-theme
+const themeBtn  = document.getElementById('themeToggle');
+const iconMoon  = document.getElementById('iconMoon');
+const iconSun   = document.getElementById('iconSun');
+const htmlEl    = document.documentElement;
+
+function getTheme()   { return localStorage.getItem('em-theme') || 'dark'; }
+function applyTheme(t) {
+  htmlEl.setAttribute('data-bs-theme', t);
+  localStorage.setItem('em-theme', t);
+  if (t === 'dark') {
+    iconMoon.classList.remove('d-none');
+    iconSun.classList.add('d-none');
+  } else {
+    iconMoon.classList.add('d-none');
+    iconSun.classList.remove('d-none');
+  }
 }
 
-// Aplicar tema
-function setTheme(v) {
-  localStorage.setItem('theme', v);
-  root.classList.remove('dark', 'light');
-  root.classList.add(v);
-}
+// Arrancar con el tema guardado
+applyTheme(getTheme());
 
-// Toggle con botón
+// Toggle
 themeBtn?.addEventListener('click', () => {
-  const current = getTheme();
-  setTheme(current === 'dark' ? 'light' : 'dark');
+  applyTheme(getTheme() === 'dark' ? 'light' : 'dark');
 });
 
-// Iniciar con el tema guardado o dark
-setTheme(getTheme());
+// Smooth scroll para nav links (Bootstrap ya lo tiene, pero por si acaso)
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', e => {
+    const target = document.querySelector(link.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // Cerrar el navbar collapse en mobile
+      const collapse = document.getElementById('mainNav');
+      if (collapse && collapse.classList.contains('show')) {
+        bootstrap.Collapse.getInstance(collapse)?.hide();
+      }
+    }
+  });
+});
+
+
+// Función para abrir el modal
+function openModal(id) {
+  const modal = document.getElementById(id);
+  if (modal) {
+    modal.style.display = 'flex'; // O la lógica que uses para mostrarlo
+    document.body.style.overflow = 'hidden'; // Evita scroll de fondo
+  }
+}
+
+// Función para cerrar el modal
+function closeModal(id) {
+  const modal = document.getElementById(id);
+  if (modal) {
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+  }
+}
+
+// Función para cerrar al hacer clic fuera (Overlay)
+function overlayClick2(event, id) {
+  if (event.target.id === id) {
+    closeModal(id);
+  }
+}
